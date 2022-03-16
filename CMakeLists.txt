@@ -1,8 +1,14 @@
-default: test
+cmake_minimum_required(VERSION 3.10)
 
-test.o: test.cpp
-    g++ -c test.cpp -o test.o
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-test: test.o
-    g++ test.o -o test
+# set the project name
+project(example)
+
+# add executable
+add_executable(${PROJECT_NAME} example.cpp)
+
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+#install(FILES example.h DESTINATION include)
 
