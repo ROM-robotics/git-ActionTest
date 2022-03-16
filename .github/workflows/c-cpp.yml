@@ -21,5 +21,6 @@ jobs:
         image: romrobotics/ubuntu
         tags: focal
         registry: docker.io
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
