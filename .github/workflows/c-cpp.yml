@@ -14,3 +14,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: make
       run: make test
+    
+    - uses: mr-smithers-excellent/docker-build-push@v5
+      name: Build & push Docker image
+      with:
+        image: romrobotics/ubuntu
+        tags: focal
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
