@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: make
-      run: cmake . && make install
+      run: cmake . && make install && touch /root/fucker
     
     - uses: mr-smithers-excellent/docker-build-push@v5
       name: Build & push Docker image
